@@ -24,10 +24,8 @@ class TipsAdapter(private val onTipRemoved: (TipModel) -> Unit) : RecyclerView.A
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TipViewHolder {
-        // Infla o layout do tip.
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.tip_item, parent, false)
-        // Cria e retorna um novo ViewHolder.
         return TipViewHolder(view)
     }
 
@@ -39,9 +37,7 @@ class TipsAdapter(private val onTipRemoved: (TipModel) -> Unit) : RecyclerView.A
     }
 
     fun updateTips(newTips: List<TipModel>) {
-        // Atualiza a lista de itens.
         tips = newTips
-        // Notifica o RecyclerView que os dados mudaram.
         notifyDataSetChanged()
     }
 }
